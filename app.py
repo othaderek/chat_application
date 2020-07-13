@@ -8,13 +8,19 @@ import pdb
 app = Flask(__name__)
 # Init SQLAlchemy
 db = SQLAlchemy(app)
-
-@app.route('/', methods=['GET'])
-def index():
-    return {"msg": "hello"}
-
+migrate = Migrate(app, db)
 # Databse Config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres@localhost:5432/chat_app_api'
-db.
 
-pdb.set_trace()
+class UsersModel(db.Model):
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(13))
+
+    def __init__(self, name):
+        self.name = name
+    
+    def __repr__(self):
+        return f"<User {self.name}>"
+
