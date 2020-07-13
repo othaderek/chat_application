@@ -1,8 +1,8 @@
 # Todo
 
 - [ ] Create Models
-- [ ] Create Database
-  - [ ] Configure to Postgresql
+- [x] Create Database
+  - [x] Configure to Postgresql
 - [ ] Create Routes for CRUD
   - [ ] User
   - [ ] Message
