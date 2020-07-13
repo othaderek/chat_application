@@ -8,4 +8,7 @@ import pdb
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+# Databse Config
+app.config['SQLALCHEMY_DATABASE_URI'] = 
+
 pdb.set_trace()
