@@ -1,6 +1,10 @@
 from ..models.user import UsersModel
+from flask import Blueprint
+import pdb
+
+user_bp = Blueprint('user_bp', __name__)
 # get users
-@app.route('/users', methods=["GET"])
+@user_bp.route('/users', methods=["GET"])
 def get_users():
     if request.method == 'GET':
         users = UsersModel.query.all()
